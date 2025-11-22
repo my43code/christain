@@ -63,11 +63,11 @@ img {
 
 .header-content {
     width: 100%;
-    padding: 0.85rem 2rem;
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    justify-content: flex-start;
+    gap: 0.85rem;
+    justify-content: space-between;
     flex-wrap: nowrap;
 }
 
@@ -77,7 +77,8 @@ img {
     gap: 0.75rem;
     text-decoration: none;
     color: var(--light);
-    flex-shrink: 0;
+    flex: 1 1 360px;
+    min-width: 0;
 }
 
 .logo-group img {
@@ -90,24 +91,23 @@ img {
 
 .logo-title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 0.01em;
+    line-height: 1.25;
 }
 
 .logo-verse {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-top: 0.15rem;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: min(100%, 760px);
+    font-size: 0.88rem;
+    opacity: 0.95;
+    margin-top: 0.1rem;
+    line-height: 1.4;
+    white-space: normal;
+    max-width: 46rem;
 }
 
 nav {
-    margin-left: 0.5rem;
-    flex: 1;
+    margin-left: 0.75rem;
+    flex: 1 1 480px;
 }
 
 .menu-toggle {
@@ -123,9 +123,10 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    gap: 0.6rem;
+    gap: 0.35rem;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .menu > li {
@@ -136,12 +137,14 @@ nav {
     color: var(--light);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.45rem 0.65rem;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.95rem;
     border-radius: 6px;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
     transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 
 }
 
@@ -266,6 +269,35 @@ main {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 1.25rem;
+}
+
+.hero-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.hero-gallery-item {
+    background: var(--light);
+    border-radius: 0.9rem;
+    overflow: hidden;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.hero-gallery-item img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-gallery-item figcaption {
+    padding: 0.6rem 0.75rem 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
 }
 
 .hero-crests {
@@ -1510,6 +1542,14 @@ textarea {
         align-items: center;
     }
 
+    .logo-title {
+        font-size: 0.98rem;
+    }
+
+    .logo-verse {
+        font-size: 0.82rem;
+    }
+
     .logo-group {
         flex: 1;
         min-width: 0;
@@ -1535,8 +1575,9 @@ textarea {
         top: 100%;
         flex-direction: column;
         background: var(--primary);
-        padding: 1rem;
+        padding: 1rem 1.25rem;
         display: none;
+        gap: 0.35rem;
     }
 
     .menu.show {
@@ -1548,6 +1589,12 @@ textarea {
         box-shadow: none;
         background: rgba(255,255,255,0.1);
         color: var(--light);
+    }
+
+    .menu > li > a {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.45rem 0.65rem;
     }
 
     .submenu li a {
