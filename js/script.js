@@ -90,6 +90,10 @@
                     title: 'Waigani Christian College in Partnership with Philippine Christian University',
                     text: 'Empowering Students Through Quality Education.'
                 },
+                {
+                    title: 'Active classrooms built for collaboration',
+                    text: 'Students learn together in fully equipped lecture spaces.'
+                },
             ];
 
             const showSlide = (pos) => {
