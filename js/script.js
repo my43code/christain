@@ -75,17 +75,21 @@
             const overlayText = document.getElementById('slideText');
             const captions = [
                 {
-                    title: 'Where Faith Meets Academic Excellence',
-                    text: 'Papua New Guinea Christian Institute of Higher Education prepares servant leaders for National Capital District and Papua New Guinea.'
+                    title: 'Leadership Team Committed to Excellence',
+                    text: 'Waigani Christian College-Tertiary Education.'
                 },
                 {
-                    title: 'Hands-on Learning & Community Impact',
-                    text: 'Students contribute to rural schools, health posts and community outreach.'
+                    title: 'New Facilities',
+                    text: 'Waigani Christian College-Tertiary Education is Expanding!'
                 },
                 {
-                    title: 'Modern Facilities in at Waigani Christian College',
-                    text: 'Smart classrooms annd care ensure holistic formation.'
-                }
+                    title: 'Modern Facilities for Students Learning and Growth',
+                    text: 'Smart Learning Environment.'
+                },
+                {
+                    title: 'Waigani Christian College in Partnership with Philippine Christian University',
+                    text: 'Empowering Students Through Quality Education.'
+                },
             ];
 
             const showSlide = (pos) => {
