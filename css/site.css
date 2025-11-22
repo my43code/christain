@@ -10,6 +10,7 @@
     --text: #1f1f1f;
     --text-muted: #555555;
     --border: #e0e0e0;
+    --header-height: 112px;
 }
 
 * {
@@ -67,6 +68,8 @@ img {
 
 .header-content {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
@@ -1598,6 +1601,10 @@ textarea {
 }
 
 @media (max-width: 900px) {
+    :root {
+        --header-height: 138px;
+    }
+
     .header-content {
         gap: 0.5rem;
         flex-wrap: wrap;
@@ -1747,6 +1754,11 @@ textarea {
     .hero-crests img {
         width: 64px;
         height: 64px;
+    }
+
+    .slide-overlay {
+        width: calc(100% - 1.2rem);
+        margin: 0 0.6rem;
     }
 
     .hero-contact {

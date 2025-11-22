@@ -1,10 +1,24 @@
 (function(){
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.getElementById('main-menu');
+    const header = document.querySelector('.site-header');
+
+    const updateHeaderHeight = () => {
+        if(!header){
+            return;
+        }
+        const height = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--header-height', `${height}px`);
+    };
+
+    updateHeaderHeight();
+    window.addEventListener('load', updateHeaderHeight);
+
     if(menuToggle && menu){
         menuToggle.addEventListener('click', () => {
             const isOpen = menu.classList.toggle('show');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
+            updateHeaderHeight();
         });
     }
 
@@ -39,6 +53,14 @@
             parent.classList.toggle('open', !isOpen);
             link.setAttribute('aria-expanded', (!isOpen).toString());
         });
+    });
+
+    window.addEventListener('resize', () => {
+        updateHeaderHeight();
+        if(menu && menuToggle && getComputedStyle(menuToggle).display === 'none'){
+            menu.classList.remove('show');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
