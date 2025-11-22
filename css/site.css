@@ -25,7 +25,6 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: var(--header-height);
 }
 
 p,
@@ -58,11 +57,11 @@ img {
 .site-header {
     background: linear-gradient(120deg, var(--primary), var(--primary-dark));
     color: var(--light);
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     z-index: 1000;
     box-shadow: 0 8px 18px rgba(0,0,0,0.35);
 }
@@ -1642,11 +1641,6 @@ textarea {
         height: 64px;
     }
 
-    .slides {
-        height: min(70vh, 660px);
-        min-height: 360px;
-    }
-
     .logo-verse .verse-text {
         flex-basis: 100%;
     }
@@ -1729,10 +1723,6 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    :root {
-        --header-height: 168px;
-    }
-
     .header-content {
         padding: 0.6rem 0.9rem;
         align-items: center;
@@ -1778,29 +1768,5 @@ textarea {
     .qr-row {
         flex-direction: row;
         justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-verse {
-        font-size: 0.8rem;
-    }
-
-    .hero {
-        gap: 1rem;
-    }
-
-    .hero h1,
-    .hero h2 {
-        font-size: 1.6rem;
-        line-height: 1.25;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hero-gallery {
-        grid-template-columns: 1fr;
     }
 }
