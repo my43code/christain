@@ -145,6 +145,7 @@ img {
 nav {
     margin-left: 0.75rem;
     flex: 1 1 480px;
+    position: relative;
 }
 
 .menu-toggle {
